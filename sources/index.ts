@@ -17,5 +17,4 @@ const app = new Hono({
 });
 
 app.route("/", elevenLabs);
-
-Deno.serve(app.fetch);
+Deno.serve({ "port": 8080 }, app.fetch);
