@@ -1,6 +1,6 @@
 {
     "tasks": {
-        "dev": "deno run --permission-set=default --watch sources/index.ts"
+        "dev": "deno run --env-file=.env.local --permission-set=default --watch sources/index.ts"
     },
 
     "imports": {
