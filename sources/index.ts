@@ -1,4 +1,6 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
+
 import { elevenLabs } from "./api/elevenLabs/index.ts";
 
 const app = new Hono({
@@ -15,6 +17,14 @@ const app = new Hono({
         return `/${hostname}${pathname}`;
     }
 });
+
+app.use(cors(
+    {
+        origin: "*",
+        allowHeaders: ["*"],
+        allowMethods: ["*"]
+    }
+));
 
 app.route("/", elevenLabs);
 Deno.serve({ "port": 8080 }, app.fetch);
