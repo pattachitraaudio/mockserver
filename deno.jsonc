@@ -1,0 +1,24 @@
+{
+    "tasks": {
+        "dev": "deno run --permission-set=default --watch sources/index.ts"
+    },
+
+    "imports": {
+        "@std/assert": "jsr:@std/assert@1",
+        "hono": "npm:hono@^4.10.6"
+    },
+
+    "fmt": {
+        "lineWidth": 80,
+        "indentWidth": 4,
+        "newLineKind": "lf",
+        "trailingCommas": "never"
+    },
+    "permissions": {
+        "default": {
+            "net": true,
+            "env": true,
+            "read": true
+        }
+    }
+}
